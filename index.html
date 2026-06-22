@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian McDowell | PhD Student & Researcher</title>
+    <title>Christian McDowell | Graduate Research Assistant & PhD Student</title>
     <style>
         :root {
             --primary: #0C2340; /* Auburn Navy */
@@ -42,7 +42,7 @@
         header p {
             font-size: 1.1rem;
             opacity: 0.9;
-            max-width: 800px;
+            max-width: 850px;
             margin: 0.5rem auto 1.5rem auto;
         }
 
@@ -116,6 +116,14 @@
             margin-bottom: 0.5rem;
         }
 
+        .coursework-block {
+            margin-top: 0.5rem;
+            font-size: 0.95rem;
+            background-color: var(--light-bg);
+            padding: 0.75rem;
+            border-radius: 4px;
+        }
+
         ul {
             margin-left: 1.5rem;
             margin-bottom: 1rem;
@@ -127,7 +135,7 @@
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1xl));
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
             gap: 1rem;
         }
 
@@ -166,7 +174,7 @@
 
 <header>
     <h1>Christian McDowell</h1>
-    <p>Electrical and Computer Engineering Ph.D. Student at Auburn University. Conducting research in non-ideal communication environments using Reinforcement Learning, applied Machine Learning, and Semantic Communication architectures.</p>
+    <p>Electrical and Computer Engineering Graduate Student at Auburn University. Conducting research at the intersection of autonomous systems, vehicle dynamics, estimation, signal processing, reinforcement learning, and applied machine learning.</p>
     <div class="contact-links">
         <a href="mailto:Mcdowell.christiand@gmail.com">Mcdowell.christiand@gmail.com</a>
         <a href="https://www.linkedin.com/in/christianmcdowell/" target="_blank">LinkedIn</a>
@@ -181,9 +189,14 @@
         <div class="item">
             <div class="item-header">
                 <span class="item-title">Auburn University</span>
-                <span class="item-date">Spring 2026 - Present</span>
+                <span class="item-date">Spring 2026 – Present</span>
             </div>
-            <div class="item-subtitle">Ph.D. in Electrical Engineering (Supervisor: Dr. Yin Sun)</div>
+            <div class="item-subtitle">Doctor of Philosophy in Electrical Engineering</div>
+            <p style="font-size: 0.95rem; margin-bottom: 0.25rem;"><em>Thesis-based Master of Science in Electrical Engineering expected en route</em></p>
+            <p><strong>Research Advisors:</strong> Dr. Scott Martin and Dr. David Bevly | <strong>Co-Advisor:</strong> Dr. Yin Sun</p>
+            <div class="coursework-block">
+                <strong>Graduate Coursework:</strong> Applied Statistics and Machine Learning, AI & Neuromorphic Hardware, Neural Networks, Information Theory, Theory of Non-Linear Optimization, Robot Control, Principles of Navigation and Guidance Systems, State-Variable Analysis of Systems
+            </div>
         </div>
         <div class="item">
             <div class="item-header">
@@ -191,7 +204,7 @@
                 <span class="item-date">Graduated Fall 2025</span>
             </div>
             <div class="item-subtitle">Bachelor of Computer Engineering with a Focus in AI/ML, Communications, and Control Systems</div>
-            <p><strong>Honors:</strong> Summa Cum Laude | Minors: Mathematics</p>
+            <p><strong>Honors:</strong> Summa Cum Laude | <strong>Minors:</strong> Mathematics</p>
             <p><strong>GPA:</strong> Cumulative 3.97/4.00 | Major 4.00/4.00</p>
         </div>
     </section>
@@ -199,12 +212,12 @@
     <section id="publications">
         <h2>Publications & Patents</h2>
         <ul class="pub-list">
-            <li>[1] Samuel Chamoun, <strong>Christian McDowell</strong>, Robin M. Buchanan, Kevin Chan, Eric Graves, and Yin Sun, "MAPPO for Edge Server Monitoring," in <em>IEEE Military Communications Conference (MILCOM)</em>, 2025.</li>
-            <li>[2] <strong>Christian McDowell</strong>, Andrea Panebianco, Sirin Chakraborty, and Yin Sun, "Significance-Driven Semantic Communication," submitted to <em>ACM MobiHoc</em>, 2026.</li>
+            <li>[1] Samuel Chamoun, <strong>Christian McDowell</strong>, Robin M. Buchanan, Kevin Chan, Eric Graves, and Yin Sun, “MAPPO for Edge Server Monitoring,” in <em>IEEE Military Communications Conference (MILCOM)</em>, 2025.</li>
+            <li>[2] <strong>Christian McDowell</strong>, Andrea Panebianco, Sirin Chakraborty, and Yin Sun, “Significance-Driven Semantic Communication,” submitted to <em>ACM MobiHoc</em>, 2026.</li>
         </ul>
         <h3 style="font-size:1.1rem; margin: 1rem 0 0.5rem 0; color:var(--primary);">Patents</h3>
         <ul class="patent-list">
-            <li>[P1] Y. Sun, S. Chakraborty, C. McDowell, and A. Panebianco, "Significance-Driven Semantic Communication," U.S. Provisional Patent Application No. 64/065,591, filed May 14, 2026.</li>
+            <li>[P1] Y. Sun, S. Chakraborty, C. McDowell, and A. Panebianco, “Significance-Driven Semantic Communication,” U.S. Provisional Patent Application No. 64/065,591, filed May 14, 2026.</li>
         </ul>
     </section>
 
@@ -212,27 +225,26 @@
         <h2>Research Experience</h2>
         <div class="item">
             <div class="item-header">
-                <span class="item-title">Auburn University — Graduate & Undergraduate Research Assistant</span>
-                <span class="item-date">Fall 2024 - Present</span>
+                <span class="item-title">Auburn University — Graduate Research Assistant, GPS and Vehicle Dynamics Laboratory</span>
+                <span class="item-date">Summer 2026 – Present</span>
             </div>
-            <div class="item-subtitle">Research Mentor: Dr. Yin Sun</div>
-            <ul>
-                <li>Built a multi-channel, noisy-link RL testbed around CartPole-v1; modeled delay/loss/jitter and ran reproducible ablations in PyTorch.</li>
-                <li>Designed and tuned optimization-driven scheduling policies for significance/"value-per-bit" transmission; integrated into the MobiHoc study.</li>
-                <li>Implemented a dual (positive/negative) feedback mechanism to stabilize decisions under stale/partial information, profiling training and inference steps.</li>
-                <li>Analyzed robustness (reward, stability, packet-loss sensitivity, compute/throughput) and generated modular pipelines for paper results.</li>
-                <li>Contributed to Department of Defense-related research initiatives, applying cutting-edge AI solutions while collaborating with NVIDIA hardware/software support.</li>
-            </ul>
+            <div class="item-subtitle">Research Advisors: Dr. Scott Martin & Dr. David Bevly; Co-Advisor: Dr. Yin Sun</div>
+            <p>Conducting advanced core research across autonomous systems, estimation protocols, vehicle dynamics mapping, and intelligent sensor arrays.</p>
         </div>
+
         <div class="item">
             <div class="item-header">
-                <span class="item-title">Auburn University — REU in Bioinformatics</span>
-                <span class="item-date">Summer 2024</span>
+                <span class="item-title">Auburn University — Undergraduate / Graduate Research Assistant</span>
+                <span class="item-date">Fall 2024 – Summer 2026</span>
             </div>
-            <div class="item-subtitle">Research Mentor: Dr. Tin Nguyen</div>
+            <div class="item-subtitle">Research Mentor: Dr. Yin Sun</div>
+            <p style="margin-bottom: 0.5rem;">Co-author on MILCOM’25 (accepted) and first author on MobiHoc’26 (submitted); responsibilities spanned optimization/scheduling algorithms, experiment design, and coding efficiencies.</p>
             <ul>
-                <li>Conducted research on CancerGPT, leveraging large language models to improve cancer diagnostics.</li>
-                <li>Collaborated with a PhD mentor to analyze and summarize large-scale datasets using advanced machine learning algorithms.</li>
+                <li>Built a multi-channel, noisy-link RL testbed around CartPole-v1; modeled delay/loss/jitter and ran reproducible ablations in PyTorch.</li>
+                <li>Designed and tuned optimization-driven scheduling policies for significance/”value-per-bit” transmission; integrated into the MobiHoc study.</li>
+                <li>Implemented a dual (positive/negative) feedback mechanism to stabilize decisions under stale/partial information, profiling training and inference steps.</li>
+                <li>Analyzed robustness (reward, stability, packet-loss sensitivity, compute/throughput) and generated figures/pipelines for paper results and presentations.</li>
+                <li>Contributed to Department of Defense-related research initiatives, applying cutting-edge AI solutions while collaborating with NVIDIA hardware/software support.</li>
             </ul>
         </div>
     </section>
@@ -250,11 +262,11 @@
             </div>
             <div class="skills-category">
                 <strong>Tools & Platforms</strong>
-                ROS, OpenCV, NumPy, SciPy, Vivado, VS Code, GDB
+                ROS, OpenCV, NumPy, SciPy, Vivado, Visual Studio Code, GDB
             </div>
             <div class="skills-category">
-                <strong>Core Domain Skills</strong>
-                Reinforcement Learning, Algorithm Design, Embedded Systems, Circuit Design, FPGA Programming, Kernel Development
+                <strong>Core Expertise</strong>
+                Autonomous Systems, Vehicle Dynamics, Estimation, Signal Processing, Reinforcement Learning, Embedded Systems, Kernel Development
             </div>
         </div>
     </section>
@@ -268,18 +280,18 @@
             </div>
             <div class="item-subtitle">Auburn University ECE Senior Design (Instructor: Dr. Robert Dean)</div>
             <ul>
-                <li>Developed modular ESP32 / ESP-IDF firmware in C running a closed-loop state machine driving tracking algorithms via a GPS-based solar-position model.</li>
-                <li>Tuned dual-axis actuation (5 kHz PWM + DIR to MD13S H-bridges, 100-200 ms inrush ramps) and power management configurations (MPPT controller, deep-sleep optimizations).</li>
+                <li>Built a low-cost dual-axis solar tracker using a GPS-based solar-position model to achieve a measured net daily energy gain over baseline.</li>
+                <li>Developed modular ESP32 / ESP-IDF firmware in C running a closed-loop state machine to cleanly manage transitions and power-saving deep sleep.</li>
             </ul>
         </div>
         <div class="item">
             <div class="item-header">
-                <span class="item-title">OS/161 Kernel Optimization</span>
+                <span class="item-title">OS/161 Kernel Sync & Concurrency</span>
                 <span class="item-date">C, MIPS Architecture</span>
             </div>
             <ul>
                 <li>Implemented kernel-level synchronization primitives (semaphores, locks, condition variables) ensuring deadlock-freedom and starvation-avoidance.</li>
-                <li>Solved complex concurrency challenges via custom scheduling adjustments, debugging runtime faults with GDB kernel tracing.</li>
+                <li>Solved complex concurrency challenges via custom pair scheduling adjustments, tracking bugs using GDB kernel tracing.</li>
             </ul>
         </div>
     </section>
