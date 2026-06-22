@@ -1,11 +1,1 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>My Personal Website</title>
-</head>
-<body>
-    <h1>Welcome to My Website!</h1>
-    <p>Hi, I'm Christian McDowell. I am building this site using GitHub Pages.</p>
-</body>
-</html>
+My Website
