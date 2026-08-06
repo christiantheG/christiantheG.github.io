@@ -1,476 +1,1377 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Christian McDowell | Graduate Research Assistant & PhD Student</title>
-    <style>
-        :root {
-            --primary: #0C2340; /* Auburn Navy */
-            --secondary: #DD6013; /* Auburn Orange */
-            --accent-bg: #f0f4f8;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --radius: 8px;
-            --transition: all 0.25s ease;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christian McDowell | Electrical Engineering Researcher</title>
+  <meta name="description" content="Christian McDowell is an electrical engineering PhD student at Auburn University researching semantic communication, wireless networks, reinforcement learning, signal processing, and applied machine learning.">
+  <meta name="theme-color" content="#081b33">
+  <meta property="og:title" content="Christian McDowell | Electrical Engineering Researcher">
+  <meta property="og:description" content="Research in semantic communication, wireless networks, reinforcement learning, signal processing, and applied machine learning.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://christiantheg.github.io/">
+  <link rel="canonical" href="https://christiantheg.github.io/">
+  <style>
+    :root {
+      --navy-950: #061426;
+      --navy-900: #081b33;
+      --navy-800: #0c2b50;
+      --navy-700: #143f70;
+      --orange: #e56a19;
+      --orange-dark: #b94708;
+      --orange-soft: #fff1e6;
+      --ink: #142236;
+      --muted: #586a80;
+      --paper: #fffdf9;
+      --surface: #ffffff;
+      --surface-alt: #f3f6f9;
+      --line: #dce3ea;
+      --green: #166534;
+      --green-soft: #ecfdf3;
+      --shadow-sm: 0 1px 2px rgba(6, 20, 38, 0.06);
+      --shadow-lg: 0 22px 65px rgba(6, 20, 38, 0.13);
+      --radius-sm: 0.65rem;
+      --radius-md: 1.1rem;
+      --radius-lg: 1.6rem;
+      --max-width: 72rem;
+    }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: #f8fafc;
-            padding-top: 60px; /* Spacer for sticky nav */
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 5.5rem;
+    }
 
-        /* Sticky Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 60px;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      text-rendering: optimizeLegibility;
+    }
 
-        nav .nav-container {
-            width: 100%;
-            max-width: 900px;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    body::before {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      content: "";
+      pointer-events: none;
+      background-image: radial-gradient(circle at 1px 1px, rgba(20, 63, 112, 0.08) 1px, transparent 0);
+      background-size: 26px 26px;
+      mask-image: linear-gradient(to bottom, black 0, transparent 46rem);
+    }
 
-        nav .logo {
-            font-weight: 700;
-            color: var(--primary);
-            text-decoration: none;
-            font-size: 1.1rem;
-        }
+    a {
+      color: inherit;
+    }
 
-        nav .links {
-            display: flex;
-            gap: 1.25rem;
-        }
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
 
-        nav .links a {
-            text-decoration: none;
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: var(--transition);
-        }
+    .skip-link {
+      position: fixed;
+      top: 0.75rem;
+      left: 0.75rem;
+      z-index: 100;
+      padding: 0.65rem 0.9rem;
+      color: white;
+      background: var(--navy-900);
+      border-radius: var(--radius-sm);
+      transform: translateY(-150%);
+    }
 
-        nav .links a:hover {
-            color: var(--secondary);
-        }
+    .skip-link:focus {
+      transform: translateY(0);
+    }
 
-        /* Hero Header */
-        header {
-            background-color: var(--primary);
-            color: white;
-            padding: 4.5rem 1.5rem;
-            text-align: center;
-            position: relative;
-        }
+    .container {
+      width: min(calc(100% - 2rem), var(--max-width));
+      margin-inline: auto;
+    }
 
-        header h1 {
-            font-size: 2.75rem;
-            margin-bottom: 0.75rem;
-            letter-spacing: -1px;
-            font-weight: 800;
-        }
+    .site-nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(220, 227, 234, 0.9);
+      background: rgba(255, 253, 249, 0.9);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
 
-        header p {
-            font-size: 1.15rem;
-            opacity: 0.9;
-            max-width: 800px;
-            margin: 0 auto 2rem auto;
-            font-weight: 400;
-            line-height: 1.7;
-        }
+    .nav-inner {
+      min-height: 4.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
 
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-        }
+    .wordmark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--navy-900);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      text-decoration: none;
+    }
 
-        .contact-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 30px;
-            transition: var(--transition);
-        }
+    .wordmark-mark {
+      width: 2.2rem;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: var(--navy-900);
+      border-radius: 50%;
+      font-size: 0.78rem;
+      letter-spacing: 0.03em;
+      box-shadow: inset -5px -5px 0 rgba(229, 106, 25, 0.3);
+    }
 
-        .contact-links a:hover {
-            background: var(--secondary);
-            color: white;
-        }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.45rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
 
-        /* Main Structural Containers */
-        main {
-            max-width: 940px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: color 160ms ease;
+    }
 
-        section {
-            margin-bottom: 4rem;
-            scroll-margin-top: 80px;
-        }
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--orange-dark);
+    }
 
-        h2 {
-            color: var(--primary);
-            font-size: 1.4rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
+    .nav-links .nav-contact {
+      padding: 0.6rem 0.9rem;
+      color: white;
+      background: var(--navy-900);
+      border-radius: 999px;
+    }
 
-        h2::after {
-            content: '';
-            flex-grow: 1;
-            height: 2px;
-            background: var(--border);
-        }
+    .nav-links .nav-contact:hover,
+    .nav-links .nav-contact:focus-visible {
+      color: white;
+      background: var(--orange-dark);
+    }
 
-        /* Cards Layout styling */
-        .card {
-            background: white;
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.75rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-            transition: var(--transition);
-        }
+    .menu-button {
+      display: none;
+      width: 2.7rem;
+      height: 2.7rem;
+      padding: 0;
+      border: 1px solid var(--line);
+      color: var(--navy-900);
+      background: var(--surface);
+      border-radius: 50%;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+    }
 
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(12, 35, 64, 0.04);
-            border-color: #cbd5e1;
-        }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(4.5rem, 10vw, 8rem) 0 clamp(4.5rem, 9vw, 7rem);
+      color: white;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(229, 106, 25, 0.23), transparent 25rem),
+        linear-gradient(135deg, var(--navy-950), var(--navy-800));
+    }
 
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            margin-bottom: 0.5rem;
-        }
+    .hero::after {
+      position: absolute;
+      right: -8rem;
+      bottom: -13rem;
+      width: 33rem;
+      height: 33rem;
+      content: "";
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 5rem rgba(255, 255, 255, 0.025),
+        0 0 0 10rem rgba(255, 255, 255, 0.02);
+    }
 
-        .item-title {
-            font-weight: 700;
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(17rem, 0.7fr);
+      align-items: center;
+      gap: clamp(2rem, 7vw, 6rem);
+    }
 
-        .item-date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            font-weight: 500;
-            background: var(--accent-bg);
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-        }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin: 0 0 1.3rem;
+      color: #ffc39c;
+      font-size: 0.75rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
 
-        .item-subtitle {
-            font-weight: 600;
-            color: #475569;
-            margin-bottom: 0.75rem;
-        }
+    .eyebrow::before {
+      width: 1.8rem;
+      height: 2px;
+      content: "";
+      background: currentColor;
+    }
 
-        /* Visual Badges */
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            font-weight: 700;
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
-            margin-left: 0.5rem;
-            white-space: nowrap;
-            vertical-align: middle;
-            line-height: 1;
-        }
-        .badge-primary { background: #dbeafe; color: #1e40af; }
-        .badge-orange { background: #ffedd5; color: #9a3412; margin-left: 0.5rem; }
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
 
-        .coursework-block {
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            background-color: #f1f5f9;
-            padding: 1rem;
-            border-radius: var(--radius);
-            color: #334155;
-            border-left: 3px solid #cbd5e1;
-        }
+    h1 {
+      max-width: 13ch;
+      margin-bottom: 1.4rem;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.2rem, 7vw, 6.7rem);
+      font-weight: 600;
+      line-height: 0.94;
+      letter-spacing: -0.055em;
+    }
 
-        ul {
-            margin-left: 1.25rem;
-            margin-top: 0.5rem;
-        }
+    .hero-lede {
+      max-width: 43rem;
+      margin-bottom: 2.1rem;
+      color: #dce8f5;
+      font-size: clamp(1.05rem, 1.8vw, 1.28rem);
+      line-height: 1.7;
+    }
 
-        li {
-            margin-bottom: 0.5rem;
-            color: #334155;
-        }
+    .hero-lede strong {
+      color: white;
+    }
 
-        /* Skills Grid Layout */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 1.25rem;
-        }
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+    }
 
-        .skills-category {
-            background: white;
-            padding: 1.25rem;
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            box-shadow: 0 1px 2px rgba(0,0,0,0.01);
-        }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 3rem;
+      padding: 0.75rem 1.1rem;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
 
-        .skills-category strong {
-            display: block;
-            margin-bottom: 0.6rem;
-            color: var(--primary);
-            font-size: 1rem;
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 0.3rem;
-        }
-        
-        .skills-category p {
-            font-size: 0.9rem;
-            color: #475569;
-        }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+    }
 
-        /* Publications List Item */
-        .pub-item {
-            margin-bottom: 1.25rem;
-            color: var(--text-dark);
-            line-height: 1.7;
-            padding-left: 1.75rem;
-            text-indent: -1.75rem;
-        }
+    .button-primary {
+      color: var(--navy-950);
+      background: #ffd4b8;
+    }
 
-        @media (max-width: 650px) {
-            nav { display: none; }
-            body { padding-top: 0; }
-            .item-header { flex-direction: column; gap: 0.5rem; }
-            header h1 { font-size: 2.2rem; }
-        }
-    </style>
+    .button-primary:hover,
+    .button-primary:focus-visible {
+      background: white;
+    }
+
+    .button-secondary {
+      color: white;
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus-visible {
+      border-color: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .research-compass {
+      position: relative;
+      min-height: 25rem;
+      display: grid;
+      place-items: center;
+    }
+
+    .compass-ring,
+    .compass-ring::before,
+    .compass-ring::after {
+      position: absolute;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .compass-ring {
+      width: 19rem;
+      height: 19rem;
+    }
+
+    .compass-ring::before {
+      inset: 2.3rem;
+    }
+
+    .compass-ring::after {
+      inset: 5rem;
+      border-color: rgba(229, 106, 25, 0.6);
+    }
+
+    .compass-center {
+      position: relative;
+      z-index: 2;
+      width: 8.6rem;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      padding: 0.85rem;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      color: white;
+      background: rgba(8, 27, 51, 0.78);
+      box-shadow: 0 0 0 0.6rem rgba(229, 106, 25, 0.08);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .compass-node {
+      position: absolute;
+      z-index: 3;
+      padding: 0.45rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 999px;
+      color: #dce8f5;
+      background: rgba(6, 20, 38, 0.86);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      white-space: nowrap;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .node-one { top: 2.2rem; left: 50%; transform: translateX(-50%); }
+    .node-two { top: 50%; right: -0.5rem; transform: translateY(-50%); }
+    .node-three { bottom: 2rem; left: 50%; transform: translateX(-50%); }
+    .node-four { top: 50%; left: -1.6rem; transform: translateY(-50%); }
+
+    .section {
+      padding: clamp(4.5rem, 8vw, 7rem) 0;
+    }
+
+    .section-alt {
+      border-block: 1px solid var(--line);
+      background: var(--surface-alt);
+    }
+
+    .section-heading {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(16rem, 0.72fr);
+      align-items: end;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .kicker {
+      display: block;
+      margin-bottom: 0.65rem;
+      color: var(--orange-dark);
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 0;
+      color: var(--navy-900);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.3rem, 4.8vw, 4.2rem);
+      font-weight: 600;
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .section-intro {
+      margin-bottom: 0.15rem;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .research-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .focus-card {
+      position: relative;
+      min-height: 20rem;
+      padding: 1.55rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .focus-card::after {
+      position: absolute;
+      right: -3rem;
+      bottom: -3rem;
+      width: 8rem;
+      height: 8rem;
+      border: 1.4rem solid var(--orange-soft);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .focus-number {
+      display: block;
+      margin-bottom: 3.5rem;
+      color: var(--orange-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 0.95rem;
+      font-style: italic;
+    }
+
+    .focus-card h3 {
+      position: relative;
+      z-index: 1;
+      max-width: 12ch;
+      margin-bottom: 0.85rem;
+      color: var(--navy-900);
+      font-size: 1.28rem;
+      line-height: 1.25;
+    }
+
+    .focus-card p {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .publication-stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .publication {
+      display: grid;
+      grid-template-columns: 10.5rem minmax(0, 1fr);
+      gap: 1.6rem;
+      padding: 1.6rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      box-shadow: var(--shadow-sm);
+      transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+    }
+
+    .publication:hover {
+      border-color: #bdc9d5;
+      box-shadow: 0 16px 40px rgba(6, 20, 38, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .pub-meta {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.6rem;
+    }
+
+    .venue {
+      color: var(--orange-dark);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .status {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.3rem 0.55rem;
+      color: var(--green);
+      background: var(--green-soft);
+      border-radius: 999px;
+      font-size: 0.69rem;
+      font-weight: 850;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .cofirst {
+      color: var(--navy-700);
+      background: #eaf2ff;
+    }
+
+    .publication h3 {
+      margin-bottom: 0.35rem;
+      color: var(--navy-900);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+      line-height: 1.22;
+    }
+
+    .authors {
+      margin-bottom: 0.85rem;
+      color: #354960;
+      font-size: 0.9rem;
+    }
+
+    .authors strong {
+      color: var(--navy-900);
+    }
+
+    .publication-description {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .publication-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      margin-top: 0.8rem;
+      color: var(--orange-dark);
+      font-size: 0.85rem;
+      font-weight: 850;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+
+    .equal-note {
+      margin: 1rem 0 0;
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    .patent-strip {
+      margin-top: 1rem;
+      padding: 1.1rem 1.3rem;
+      border-left: 4px solid var(--orange);
+      color: #34475d;
+      background: var(--orange-soft);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      font-size: 0.91rem;
+    }
+
+    .patent-strip strong {
+      color: var(--navy-900);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: start;
+    }
+
+    .profile-copy {
+      position: sticky;
+      top: 7rem;
+    }
+
+    .profile-copy h2 {
+      margin-bottom: 1.3rem;
+    }
+
+    .profile-copy p {
+      color: var(--muted);
+    }
+
+    .profile-copy .lead {
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.3rem;
+      line-height: 1.55;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 0;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: 0 0 2.3rem 2rem;
+      border-left: 1px solid #c8d1dc;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+      border-left-color: transparent;
+    }
+
+    .timeline-item::before {
+      position: absolute;
+      top: 0.35rem;
+      left: -0.43rem;
+      width: 0.8rem;
+      height: 0.8rem;
+      border: 3px solid var(--paper);
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 1px var(--orange);
+      content: "";
+    }
+
+    .timeline-item time {
+      display: block;
+      margin-bottom: 0.3rem;
+      color: var(--orange-dark);
+      font-size: 0.73rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .timeline-item h3 {
+      margin-bottom: 0.28rem;
+      color: var(--navy-900);
+      font-size: 1.14rem;
+      line-height: 1.35;
+    }
+
+    .timeline-item .organization {
+      margin-bottom: 0.6rem;
+      color: #40546b;
+      font-size: 0.9rem;
+      font-weight: 750;
+    }
+
+    .timeline-item p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .education-card {
+      padding: 1.55rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .education-card .degree {
+      margin-bottom: 0.4rem;
+      color: var(--navy-900);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.35rem;
+      line-height: 1.3;
+    }
+
+    .education-card .school {
+      margin-bottom: 1.1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 700;
+    }
+
+    .education-card dl {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 0.45rem 0.8rem;
+      margin: 0;
+      font-size: 0.88rem;
+    }
+
+    .education-card dt {
+      color: var(--muted);
+    }
+
+    .education-card dd {
+      margin: 0;
+      color: var(--ink);
+      font-weight: 750;
+    }
+
+    .coursework {
+      padding: 1.4rem 1.55rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--navy-900);
+    }
+
+    .coursework h3 {
+      margin-bottom: 0.75rem;
+      color: white;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .coursework p {
+      margin-bottom: 0;
+      color: #cbd9e8;
+      font-size: 0.9rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .project-card {
+      padding: 1.45rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+    }
+
+    .project-tag {
+      display: block;
+      margin-bottom: 1.5rem;
+      color: var(--orange-dark);
+      font-size: 0.7rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin-bottom: 0.7rem;
+      color: var(--navy-900);
+      font-size: 1.08rem;
+      line-height: 1.4;
+    }
+
+    .project-card p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .skills-row {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-group {
+      padding-top: 1rem;
+      border-top: 2px solid var(--navy-900);
+    }
+
+    .skill-group h3 {
+      margin-bottom: 0.55rem;
+      color: var(--navy-900);
+      font-size: 0.83rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .skill-group p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .contact-section {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      color: white;
+      background: var(--navy-900);
+    }
+
+    .contact-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(17rem, 0.65fr);
+      align-items: end;
+      gap: 2rem;
+    }
+
+    .contact-card h2 {
+      max-width: 14ch;
+      margin-bottom: 1rem;
+      color: white;
+    }
+
+    .contact-card p {
+      max-width: 38rem;
+      margin-bottom: 0;
+      color: #cbd9e8;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 0.65rem;
+    }
+
+    .contact-links a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 0.85rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .contact-links a::after {
+      color: #ffc39c;
+      content: "↗";
+    }
+
+    footer {
+      padding: 1.5rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #9fb0c2;
+      background: var(--navy-900);
+      font-size: 0.78rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    :focus-visible {
+      outline: 3px solid #f7a56f;
+      outline-offset: 3px;
+    }
+
+    @media (max-width: 1160px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .research-compass {
+        width: min(100%, 27rem);
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 920px) {
+      .section-heading,
+      .profile-grid,
+      .contact-card {
+        grid-template-columns: 1fr;
+      }
+
+      .research-grid,
+      .projects-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .focus-card:last-child,
+      .project-card:last-child {
+        grid-column: 1 / -1;
+      }
+
+      .profile-copy {
+        position: static;
+      }
+
+      .skills-row {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .menu-button {
+        display: grid;
+        place-items: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: calc(100% + 1px);
+        right: 1rem;
+        left: 1rem;
+        display: none;
+        align-items: stretch;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: var(--radius-md);
+        background: var(--surface);
+        box-shadow: var(--shadow-lg);
+      }
+
+      .nav-links[data-open="true"] {
+        display: grid;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 0.55rem;
+      }
+
+      .nav-links .nav-contact {
+        text-align: center;
+      }
+
+      .hero {
+        padding-top: 4rem;
+      }
+
+      h1 {
+        font-size: clamp(3.2rem, 17vw, 5rem);
+      }
+
+      .research-compass {
+        min-height: 21rem;
+      }
+
+      .compass-ring {
+        width: 16rem;
+        height: 16rem;
+      }
+
+      .compass-node {
+        padding: 0.42rem 0.6rem;
+        font-size: 0.67rem;
+      }
+
+      .node-one { top: 1.2rem; left: 0; transform: none; }
+      .node-two { top: 1.2rem; right: 0; left: auto; transform: none; }
+      .node-three { right: 0; bottom: 1rem; left: auto; transform: none; }
+      .node-four { top: auto; bottom: 1rem; left: 0; transform: none; }
+
+      .research-grid,
+      .projects-grid,
+      .education-grid,
+      .skills-row {
+        grid-template-columns: 1fr;
+      }
+
+      .focus-card:last-child,
+      .project-card:last-child {
+        grid-column: auto;
+      }
+
+      .focus-card {
+        min-height: auto;
+      }
+
+      .focus-number {
+        margin-bottom: 2rem;
+      }
+
+      .publication {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .pub-meta {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Christian McDowell",
+    "url": "https://christiantheg.github.io/",
+    "jobTitle": "Electrical Engineering PhD Student",
+    "affiliation": {
+      "@type": "CollegeOrUniversity",
+      "name": "Auburn University"
+    },
+    "email": "mailto:cdm0135@auburn.edu",
+    "sameAs": [
+      "https://github.com/christiantheG",
+      "https://www.linkedin.com/in/christianmcdowell/"
+    ],
+    "knowsAbout": [
+      "Semantic communication",
+      "Wireless networks",
+      "Reinforcement learning",
+      "Signal processing",
+      "Applied machine learning"
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<nav>
-    <div class="nav-container">
-        <a href="#" class="logo">CM</a>
-        <div class="links">
-            <a href="#education">Education</a>
-            <a href="#awards">Awards</a>
-            <a href="#publications">Publications</a>
-            <a href="#research">Research</a>
-            <a href="#technical-skills">Skills</a>
-            <a href="#projects">Projects</a>
-        </div>
+  <nav class="site-nav" aria-label="Primary navigation">
+    <div class="container nav-inner">
+      <a class="wordmark" href="#top" aria-label="Christian McDowell, home">
+        <span class="wordmark-mark" aria-hidden="true">CM</span>
+        <span>Christian McDowell</span>
+      </a>
+      <button class="menu-button" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">☰</button>
+      <ul class="nav-links" id="nav-links" data-open="false">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a class="nav-contact" href="#contact">Contact</a></li>
+      </ul>
     </div>
-</nav>
+  </nav>
 
-<header>
-    <h1>Christian McDowell</h1>
-    <p>Electrical and Computer Engineering Graduate Student at Auburn University. Researching semantic communication, applied machine learning, and signal processing—with focus areas in LLMs for engineering systems, intelligent wireless networks, and efficient algorithmic implementation.</p>
-    <div class="contact-links">
-        <a href="mailto:Mcdowell.christiand@gmail.com">Email</a>
-        <a href="https://www.linkedin.com/in/christianmcdowell/" target="_blank">LinkedIn</a>
-        <a href="https://github.com/christiantheG" target="_blank">GitHub</a>
+  <header class="hero" id="top">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Electrical Engineering PhD Student · Auburn University</p>
+        <h1>Sending what matters, when it matters.</h1>
+        <p class="hero-lede">
+          I am <strong>Christian McDowell</strong>, an Electrical Engineering PhD student at Auburn University advised by Dr. Yin Sun. My research spans semantic communication, reinforcement learning, and signal processing, with broader interests in applying machine learning and LLMs to sensing and complex engineering systems.
+        </p>
+        <div class="button-row">
+          <a class="button button-primary" href="#publications">Explore my research</a>
+          <a class="button button-secondary" href="mailto:cdm0135@auburn.edu">Start a conversation</a>
+        </div>
+      </div>
+
+      <div class="research-compass" role="img" aria-label="Research themes: semantic communication, wireless networks, applied machine learning, reinforcement learning, and signal processing">
+        <div class="compass-ring" aria-hidden="true"></div>
+        <div class="compass-center">Semantic communication</div>
+        <span class="compass-node node-one">Wireless networks</span>
+        <span class="compass-node node-two">Applied ML</span>
+        <span class="compass-node node-three">Reinforcement learning</span>
+        <span class="compass-node node-four">Signal processing</span>
+      </div>
     </div>
-</header>
+  </header>
 
-<main>
+  <main id="main">
+    <section class="section" id="research">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Research direction</span>
+            <h2>Communication built around decisions.</h2>
+          </div>
+          <p class="section-intro">
+            My work connects physical-layer representation learning with resource allocation and downstream inference. The central question is simple: how can a system spend its limited communication budget on the information that changes the decision?
+          </p>
+        </div>
 
-    <section id="education">
-        <h2>Education</h2>
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">Auburn University</span>
-                <span class="item-date">Spring 2026 – Present</span>
-            </div>
-            <div class="item-subtitle">Doctor of Philosophy in Electrical Engineering</div>
-            <p><strong>Advisor:</strong> Dr. Yin Sun</p>
-            <div class="coursework-block">
-                <strong>Graduate Level Coursework:</strong> Applied Statistics and Machine Learning, AI & Neuromorphic Hardware, Neural Networks, Information Theory, Theory of Non-Linear Optimization, Robot Control, Stochastic Signal and System Analysis, Real Analysis I.
-            </div>
+        <div class="research-grid">
+          <article class="focus-card">
+            <span class="focus-number">01</span>
+            <h3>Semantic communication</h3>
+            <p>Learning compact representations that preserve task value instead of reconstructing every bit or pixel.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-number">02</span>
+            <h3>Adaptive wireless systems</h3>
+            <p>Adapting to channel quality, symbol budgets, and Age of Information without costly online retraining.</p>
+          </article>
+          <article class="focus-card">
+            <span class="focus-number">03</span>
+            <h3>Learning for allocation</h3>
+            <p>Combining reinforcement learning, optimization, and information-theoretic structure to schedule scarce resources.</p>
+          </article>
         </div>
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">Auburn University <span class="badge badge-primary">Summa Cum Laude</span></span>
-                <span class="item-date">Graduated Fall 2025</span>
-            </div>
-            <div class="item-subtitle">Bachelor of Computer Engineering</div>
-            <p><strong>Focus:</strong> AI/ML, Communications, and Control Systems | <strong>Minor:</strong> Mathematics</p>
-            <p style="margin-top: 0.25rem;"><strong>GPA:</strong> Cumulative 3.97 / 4.00 | Major 4.00 / 4.00</p>
-        </div>
+      </div>
     </section>
 
-    <section id="awards">
-        <h2>Awards & Honors</h2>
-        <div class="card">
-            <ul>
-                <li style="margin-bottom: 0.75rem;"><strong>Walt and Virginia Woltosz Fellowship</strong> | <span class="item-date" style="background: #f0fdf4; color: #166534; font-style: normal;">Spring 2026 – Spring 2030</span></li>
-                <li style="margin-bottom: 0.75rem;"><strong>Auburn Engineering Honors Circle</strong> | Fall 2023 – Fall 2025</li>
-                <li style="margin-bottom: 0.75rem;"><strong>Dean’s List</strong> | Fall 2023 – Fall 2025</li>
-                <li style="margin-bottom: 0.5rem;"><strong>Undergraduate Research Fellowship</strong> | Summer 2025 – Fall 2025</li>
-            </ul>
+    <section class="section section-alt" id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Selected scholarship</span>
+            <h2>Research in context.</h2>
+          </div>
+          <p class="section-intro">
+            Recent work spans cross-layer semantic communication, real-time pedestrian-safety monitoring, and multi-agent reinforcement learning for edge systems.
+          </p>
         </div>
+
+        <div class="publication-stack">
+          <article class="publication">
+            <div class="pub-meta">
+              <span class="venue">ACM MobiHoc ’26</span>
+              <span class="status">Submitted</span>
+              <span class="status cofirst">Co-first author</span>
+            </div>
+            <div>
+              <h3>Significance-Driven Semantic Communication</h3>
+              <p class="authors"><strong>Christian McDowell<sup>∗</sup></strong>, Andrea Panebianco<sup>∗</sup>, Sirin Chakraborty, and Yin Sun</p>
+              <p class="publication-description">
+                Defines per-sample data significance through L-divergence and unifies a Meta-VIB transceiver with Q-Maximization scheduling. The system adapts across channel quality, codelength, and information age without online retraining; on a real-world pedestrian-safety dataset, it reaches up to 1000× semantic-spectrum-efficiency gain at 0 dB average SNR and 40× at 5 dB.
+              </p>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="pub-meta">
+              <span class="venue">ACM MobiHoc ’26 Workshop</span>
+              <span class="status">In preparation</span>
+              <span class="status cofirst">Co-first author</span>
+            </div>
+            <div>
+              <h3>SafeStep: An Interactive Demonstration of Semantic Communication for Pedestrian Safety Monitoring</h3>
+              <p class="authors"><strong>Christian McDowell<sup>∗</sup></strong>, Andrea Panebianco<sup>∗</sup>, Jeremiah Yang<sup>∗</sup>, Sirin Chakraborty, Samuel Chamoun, Travis Ross, and Yin Sun</p>
+              <p class="publication-description">
+                Presents an interactive, live semantic-communication system for pedestrian-safety monitoring at Toomer’s Corner. Visitors can compare methods while varying SNR, codelength, and Age of Information to see how a compact model prioritizes safety-critical information under changing channel conditions.
+              </p>
+              <a class="publication-link" href="https://safestep.eng.auburn.edu/" target="_blank" rel="noopener noreferrer">Explore the live SafeStep@AU demonstration <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="publication">
+            <div class="pub-meta">
+              <span class="venue">IEEE MILCOM ’25</span>
+              <span class="status">Published</span>
+            </div>
+            <div>
+              <h3>MAPPO for Edge Server Monitoring</h3>
+              <p class="authors">Samuel Chamoun, <strong>Christian McDowell</strong>, Robin M. Buchanan, Kevin Chan, Eric Graves, and Yin Sun</p>
+              <p class="publication-description">
+                Studies multi-agent proximal policy optimization for distributed monitoring decisions in resource-constrained edge systems.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <p class="equal-note"><sup>∗</sup> Equal contribution. “Co-first author” is used here for equal-contribution authorship.</p>
+
+        <div class="patent-strip">
+          <strong>Patent:</strong> Y. Sun, S. Chakraborty, C. McDowell, and A. Panebianco, “Significance-Driven Semantic Communication,” U.S. Provisional Patent Application No. 64/065,591, filed May 14, 2026.
+        </div>
+      </div>
     </section>
 
-    <section id="publications">
-        <h2>Publications & Patents</h2>
-        <div class="card">
-            <div class="pub-item">
-                [1] S. Chamoun, <strong>C. McDowell</strong>, R. M. Buchanan, K. Chan, E. Graves, and Y. Sun, “MAPPO for Edge Server Monitoring,” in <em>IEEE Military Communications Conference (MILCOM)</em>, 2025.
-            </div>
-            <div class="pub-item">
-                [2] <strong>C. McDowell</strong>, A. Panebianco, S. Chakraborty, and Y. Sun, “Significance-Driven Semantic Communication,” submitted to <em>ACM MobiHoc</em>, 2026. <span class="badge badge-orange">First Author</span>
-            </div>
-            
-            <h3 style="font-size:1.05rem; margin: 2rem 0 0.75rem 0; color:var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Patents</h3>
-            <div class="pub-item" style="margin-bottom: 0;">
-                [P1] Y. Sun, S. Chakraborty, <strong>C. McDowell</strong>, and A. Panebianco, “Significance-Driven Semantic Communication,” U.S. Provisional Patent Application No. 64/065,591, filed May 14, 2026.
-            </div>
+    <section class="section" id="experience">
+      <div class="container profile-grid">
+        <div class="profile-copy">
+          <span class="kicker">Research experience</span>
+          <h2>From theory to working systems.</h2>
+          <p class="lead">I enjoy the full research loop: formalizing the problem, building the learning system, running reproducible experiments, and translating the result into a live demonstration.</p>
+          <p>My current work with Dr. Yin Sun focuses on semantic communication and learning-based wireless resource allocation for edge intelligence.</p>
         </div>
+
+        <div class="timeline">
+          <article class="timeline-item">
+            <time datetime="2026-01">January 2026 – Present</time>
+            <h3>Graduate Research Assistant</h3>
+            <p class="organization">Auburn University · Advisor: Dr. Yin Sun</p>
+            <p>Researching significance-driven semantic communication through Meta-VIB transceivers, significance-aware resource allocation, and real-time experimental systems. This work includes the submitted MobiHoc paper, its related provisional patent, and the SafeStep workshop demonstration in preparation.</p>
+          </article>
+
+          <article class="timeline-item">
+            <time datetime="2024-08">August 2024 – December 2025</time>
+            <h3>Undergraduate Research Assistant</h3>
+            <p class="organization">Auburn University · Research mentor: Dr. Yin Sun</p>
+            <p>Built noisy-link reinforcement-learning testbeds, modeled delay, loss, and jitter, and developed scheduling and feedback mechanisms for decisions under stale or partial information. Contributed to the published MILCOM 2025 work on multi-agent edge-server monitoring.</p>
+          </article>
+
+          <article class="timeline-item">
+            <time datetime="2024-06">Summer 2024</time>
+            <h3>REU Researcher in Bioinformatics</h3>
+            <p class="organization">Auburn University · Mentor: Dr. Tin Nguyen</p>
+            <p>Applied large language models and machine learning to cancer-research analysis in an interdisciplinary research environment.</p>
+          </article>
+
+          <article class="timeline-item">
+            <time datetime="2021">Spring 2021 – Spring 2023</time>
+            <h3>Lead Undergraduate Researcher, Drug Discovery</h3>
+            <p class="organization">University of West Georgia</p>
+            <p>Led synthesis-route redesign work that increased yield by 50% and presented the research at multiple academic conferences.</p>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section id="research">
-        <h2>Research Experience</h2>
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">Undergraduate / Graduate Research Assistant</span>
-                <span class="item-date">Fall 2024 – Present</span>
-            </div>
-            <div class="item-subtitle">Research Advisor: Dr. Yin Sun</div>
-            <p style="color: var(--text-dark); font-weight: 500; margin-bottom: 0.5rem;">Co-author on MILCOM’25 (accepted) and first author on MobiHoc’26 (submitted); responsibilities span optimization/scheduling algorithms, experiment design, and coding efficiencies:</p>
-            <ul>
-                <li>Built a multi-channel, noisy-link RL testbed around CartPole-v1; modeled delay/loss/jitter and ran reproducible ablations in PyTorch.</li>
-                <li>Designed and tuned optimization-driven scheduling policies for significance/”value-per-bit” transmission; integrated into the MobiHoc study.</li>
-                <li>Implemented a dual (positive/negative) feedback mechanism to stabilize decisions under stale/partial information, profiling training and inference steps.</li>
-                <li>Analyzed robustness (reward, stability, packet-loss sensitivity, compute/throughput) and generated figures/pipelines for paper results and presentations.</li>
-                <li>Contributed to Department of Defense-related research initiatives, applying cutting-edge AI solutions while collaborating with NVIDIA hardware/software support.</li>
-            </ul>
+    <section class="section section-alt" id="education">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Education</span>
+            <h2>A rigorous technical foundation.</h2>
+          </div>
+          <p class="section-intro">Training across information theory, optimization, statistics, control, signal processing, machine learning, and computer engineering.</p>
         </div>
 
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">REU in Bioinformatics — Research Assistant</span>
-                <span class="item-date">Summer 2024</span>
-            </div>
-            <div class="item-subtitle">Research Mentor: Dr. Tin Nguyen</div>
-            <ul>
-                <li>Conducted research on CancerGPT, leveraging large language models to improve cancer diagnostics.</li>
-                <li>Collaborated with a PhD student mentor to analyze and summarize large-scale datasets using advanced machine learning algorithms.</li>
-                <li>Gained experience in cross-cultural communication and interdisciplinary teamwork within an international lab setting.</li>
-            </ul>
+        <div class="education-grid">
+          <article class="education-card">
+            <h3 class="degree">PhD in Electrical Engineering</h3>
+            <p class="school">Auburn University · Spring 2026 – Present</p>
+            <dl>
+              <dt>Advisor</dt>
+              <dd>Dr. Yin Sun</dd>
+              <dt>Fellowship</dt>
+              <dd>Walt and Virginia Woltosz Fellow</dd>
+              <dt>Focus</dt>
+              <dd>Semantic communication and edge intelligence</dd>
+            </dl>
+          </article>
+
+          <article class="education-card">
+            <h3 class="degree">B.E. in Computer Engineering</h3>
+            <p class="school">Auburn University · Fall 2025</p>
+            <dl>
+              <dt>Honors</dt>
+              <dd>Summa Cum Laude</dd>
+              <dt>Focus</dt>
+              <dd>AI/ML, communications, and control systems</dd>
+              <dt>Minor</dt>
+              <dd>Mathematics</dd>
+              <dt>Major GPA</dt>
+              <dd>4.00 / 4.00</dd>
+            </dl>
+          </article>
         </div>
 
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">Drug Discovery Research — Lead Undergraduate Researcher</span>
-                <span class="item-date">Spring 2021 – Spring 2023</span>
-            </div>
-            <div class="item-subtitle">University of West Georgia</div>
-            <ul>
-                <li>Led a team in redesigning chemical synthesis routes, achieving a 50% increase in yield.</li>
-                <li>Presented research findings at multiple academic conferences.</li>
-            </ul>
+        <div class="coursework">
+          <h3>Graduate coursework</h3>
+          <p>Applied Statistics and Machine Learning · AI and Neuromorphic Hardware · Neural Networks · Information Theory · Theory of Nonlinear Optimization · Robot Control · Stochastic Signal and System Analysis · Real Analysis I</p>
         </div>
+      </div>
     </section>
 
-    <section id="technical-skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skills-category">
-                <strong>Programming</strong>
-                <p>Python, C/C++, Java, R, Assembly (x86), MATLAB, CUDA, Verilog/VHDL</p>
-            </div>
-            <div class="skills-category">
-                <strong>AI & Control</strong>
-                <p>PPO/MAPPO, Value-Based RL, VIB encoders, RVI/Q-tables, PyTorch, TensorFlow, Gymnasium</p>
-            </div>
-            <div class="skills-category">
-                <strong>Tools & Ecosystems</strong>
-                <p>ROS, OpenCV, NumPy, SciPy, jGrasp, Visual Studio Code, IntelliJ, RStudio, Vivado</p>
-            </div>
-            <div class="skills-category">
-                <strong>Core Verticals</strong>
-                <p>Reinforcement Learning, Deep Learning, Algorithm Design, Embedded Systems, Circuit Design, FPGA Programming, Kernel Development</p>
-            </div>
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Selected engineering</span>
+            <h2>Built beyond the paper.</h2>
+          </div>
+          <p class="section-intro">Hands-on projects across embedded systems, operating systems, and digital hardware complement my research in learning and communication.</p>
         </div>
+
+        <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-tag">Embedded systems · 2025</span>
+            <h3>ASML-Sponsored Dual-Axis Solar Tracker</h3>
+            <p>Developed modular ESP32 firmware, GPS-based solar positioning, closed-loop motor control, and low-power state management for a tracker that achieved a measured daily energy gain over a fixed-tilt baseline.</p>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">C · MIPS · OS/161</span>
+            <h3>Kernel Synchronization &amp; Concurrency</h3>
+            <p>Implemented semaphores, locks, and condition variables; validated deadlock freedom, fairness, and starvation avoidance using kernel tracing and regression tests.</p>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Verilog · FPGA</span>
+            <h3>AUR-16 Processor</h3>
+            <p>Designed a single-cycle 16-bit RISC-style CPU, including the ISA, datapath, control, testbenches, and assembly validation programs.</p>
+          </article>
+        </div>
+
+        <div class="skills-row" role="group" aria-label="Technical skills">
+          <div class="skill-group">
+            <h3>Languages</h3>
+            <p>Python, C/C++, MATLAB, CUDA, Java, R, Verilog/VHDL, x86 Assembly</p>
+          </div>
+          <div class="skill-group">
+            <h3>Learning</h3>
+            <p>PPO/MAPPO, value-based RL, variational information bottlenecks, PyTorch, TensorFlow</p>
+          </div>
+          <div class="skill-group">
+            <h3>Systems</h3>
+            <p>Linux, ROS, OpenCV, Gymnasium, FPGA development, embedded systems, kernel development</p>
+          </div>
+          <div class="skill-group">
+            <h3>Methods</h3>
+            <p>Signal processing, optimization, experiment design, data analysis, technical writing</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section id="projects">
-        <h2>Selected Engineering Projects</h2>
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">Dual-Axis Solar Tracker (Team SUNFLOWER) — ASML-Sponsored</span>
-                <span class="item-date">2025</span>
-            </div>
-            <div class="item-subtitle">Auburn ECE Senior Design | Instructor: Dr. Robert Dean</div>
-            <ul>
-                <li>Built a low-cost dual-axis solar tracker keeping a panel normal to the sun using a GPS-based solar-position model to achieve net daily energy gain over baseline.</li>
-                <li>Developed modular ESP32 / ESP-IDF firmware in C (GPS, motor control, data logging, solar positioning) driving a closed-loop state machine.</li>
-                <li>Tuned dual-axis actuation (5 kHz PWM + DIR to MD13S H-bridges) and power management (MPPT controller, buck regulation, 12 V LiFePO4).</li>
-            </ul>
+    <section class="contact-section" id="contact">
+      <div class="container contact-card">
+        <div>
+          <span class="kicker">Contact</span>
+          <h2>Let’s talk about research that moves from theory to impact.</h2>
+          <p>I am interested in research conversations and collaborations around semantic communication, edge intelligence, reinforcement learning, and signal processing.</p>
         </div>
-        <div class="card">
-            <div class="item-header">
-                <span class="item-title">OS/161 Kernel Optimization</span>
-                <span class="item-date">C / MIPS Architecture</span>
-            </div>
-            <ul>
-                <li>Ensured deadlock-freedom and starvation-avoidance; instrumented/debugged with GDB and kernel tracing.</li>
-                <li>Implemented kernel-level synchronization primitives (semaphores, locks, condition variables) and solved the "Cats and Mice" concurrency problem.</li>
-            </ul>
+        <div class="contact-links">
+          <a href="mailto:cdm0135@auburn.edu">cdm0135@auburn.edu</a>
+          <a href="https://www.linkedin.com/in/christianmcdowell/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/christiantheG" target="_blank" rel="noopener noreferrer">GitHub</a>
         </div>
+      </div>
     </section>
+  </main>
 
-    <section id="memberships">
-        <h2>Professional Memberships</h2>
-        <div class="card">
-            <ul>
-                <li style="margin-bottom: 0.5rem;">Student Member, Institute of Electrical and Electronics Engineers (IEEE)</li>
-                <li>Student Member, Auburn Association for Computing Machinery (ACM)</li>
-            </ul>
-        </div>
-    </section>
+  <footer>
+    <div class="container footer-inner">
+      <span>© <span id="year">2026</span> Christian McDowell</span>
+      <span>Built for GitHub Pages.</span>
+    </div>
+  </footer>
 
-</main>
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('#nav-links');
 
+    menuButton.addEventListener('click', () => {
+      const isOpen = navLinks.dataset.open === 'true';
+      navLinks.dataset.open = String(!isOpen);
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.setAttribute('aria-label', isOpen ? 'Open navigation' : 'Close navigation');
+      menuButton.textContent = isOpen ? '☰' : '×';
+    });
+
+    navLinks.addEventListener('click', (event) => {
+      if (event.target.matches('a')) {
+        navLinks.dataset.open = 'false';
+        menuButton.setAttribute('aria-expanded', 'false');
+        menuButton.setAttribute('aria-label', 'Open navigation');
+        menuButton.textContent = '☰';
+      }
+    });
+
+    document.querySelector('#year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
