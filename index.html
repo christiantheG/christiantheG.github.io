@@ -746,9 +746,10 @@
       font-size: 0.9rem;
     }
 
-    .projects-grid {
+    .projects-grid,
+    .two-column-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 1rem;
     }
 
@@ -875,6 +876,56 @@
       outline-offset: 3px;
     }
 
+    .publication-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.5rem;
+    }
+
+    .status-preprint {
+      color: #694608;
+      background: #fff3d6;
+    }
+
+    .manuscript-note {
+      margin: 0.85rem 0 0;
+      color: #40546b;
+      font-size: 0.88rem;
+    }
+
+    .patent-strip h3 {
+      margin: 0 0 0.75rem;
+      font-size: 1rem;
+    }
+
+    .patent-strip p { margin: 0 0 0.75rem; }
+    .patent-strip p:last-child { margin-bottom: 0; }
+
+    .detail-note {
+      color: var(--muted);
+      font-size: 0.83rem;
+      font-weight: 500;
+    }
+
+    .additional-study {
+      margin: 1.2rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .coursework-list { margin: 0; }
+    .coursework-list dt {
+      margin-top: 1rem;
+      color: #ffc39c;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+    .coursework-list dd {
+      margin: 0.3rem 0 0;
+      color: #cbd9e8;
+      font-size: 0.9rem;
+    }
+
     @media (max-width: 1160px) {
       .hero-grid {
         grid-template-columns: 1fr;
@@ -898,8 +949,7 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .focus-card:last-child,
-      .project-card:last-child {
+      .focus-card:last-child {
         grid-column: 1 / -1;
       }
 
@@ -974,6 +1024,7 @@
 
       .research-grid,
       .projects-grid,
+      .two-column-grid,
       .education-grid,
       .skills-row {
         grid-template-columns: 1fr;
@@ -1058,6 +1109,7 @@
       <ul class="nav-links" id="nav-links" data-open="false">
         <li><a href="#research">Research</a></li>
         <li><a href="#publications">Publications</a></li>
+        <li><a href="#demonstrations">Demos</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#education">Education</a></li>
         <li><a class="nav-contact" href="#contact">Contact</a></li>
@@ -1071,11 +1123,11 @@
         <p class="eyebrow">Electrical Engineering PhD Student · Auburn University</p>
         <h1>Sending what matters, when it matters.</h1>
         <p class="hero-lede">
-          I am <strong>Christian McDowell</strong>, an Electrical Engineering PhD student at Auburn University advised by Dr. Yin Sun. My research spans semantic communication, reinforcement learning, and signal processing, with broader interests in applying machine learning and LLMs to sensing and complex engineering systems.
+          I am <strong>Christian McDowell</strong>, an Electrical Engineering PhD student and Walt and Virginia Woltosz Fellow at Auburn University, advised by Dr. Yin Sun. I study how communication systems can deliver the information that matters for a decision under limited bandwidth, changing channels, and stale observations. My work connects information theory, machine learning, and wireless networking with real-time experimental systems.
         </p>
         <div class="button-row">
           <a class="button button-primary" href="#publications">Explore my research</a>
-          <a class="button button-secondary" href="mailto:cdm0135@auburn.edu">Start a conversation</a>
+          <a class="button button-secondary" href="#demonstrations">See the demonstrations</a>
         </div>
       </div>
 
@@ -1127,43 +1179,43 @@
       <div class="container">
         <div class="section-heading">
           <div>
-            <span class="kicker">Selected Scholarship</span>
+            <span class="kicker">Publications &amp; Manuscripts</span>
             <h2>Research in Context.</h2>
           </div>
-          <p class="section-intro">
-            Recent work spans cross-layer semantic communication, real-time pedestrian-safety monitoring, and multi-agent reinforcement learning for edge systems.
-          </p>
+          <p class="section-intro">Recent work spans significance-driven communication, pedestrian-safety monitoring, and multi-agent reinforcement learning for edge systems.</p>
         </div>
 
         <div class="publication-stack">
           <article class="publication">
             <div class="pub-meta">
-              <span class="venue">ACM MobiHoc ’26</span>
-              <span class="status">Submitted</span>
+              <span class="venue">arXiv · 2026</span>
+              <span class="status status-preprint">Preprint</span>
               <span class="status cofirst">Co-first author</span>
             </div>
             <div>
               <h3>Significance-Driven Semantic Communication</h3>
               <p class="authors"><strong>Christian McDowell<sup>∗</sup></strong>, Andrea Panebianco<sup>∗</sup>, Sirin Chakraborty, and Yin Sun</p>
-              <p class="publication-description">
-                Defines per-sample data significance through L-divergence and unifies a Meta-VIB transceiver with Q-Maximization scheduling. The system adapts across channel quality, codelength, and information age without online retraining; on a real-world pedestrian-safety dataset, it reaches up to 1000× semantic-spectrum-efficiency gain at 0 dB average SNR and 40× at 5 dB.
-              </p>
+              <p class="publication-description">Connects a decision-theoretic measure of per-sample significance with learned joint source-channel coding and communication-resource allocation. I led the design of Meta-VIB, a transceiver that adapts to SNR, codelength, and Age of Information without online retraining. The evaluated Meta-VIB/Q-Maximization design achieved up to 1,000× semantic spectrum-efficiency improvement at 0 dB and 40× at 5 dB over the tested cross-layer baselines.</p>
+              <p class="manuscript-note">An expanded journal manuscript is in preparation for submission to <em>IEEE Transactions on Networking</em>.</p>
+              <a class="publication-link" href="https://arxiv.org/abs/2608.28441" target="_blank" rel="noopener noreferrer">Read the preprint <span aria-hidden="true">↗</span></a>
             </div>
           </article>
 
           <article class="publication">
             <div class="pub-meta">
-              <span class="venue">ACM MobiHoc ’26 Workshop</span>
-              <span class="status">In preparation</span>
+              <span class="venue">IEEE MILCOM ’26 Workshop</span>
+              <span class="status">Accepted</span>
               <span class="status cofirst">Co-first author</span>
             </div>
             <div>
               <h3>SafeStep: An Interactive Demonstration of Semantic Communication for Pedestrian Safety Monitoring</h3>
-              <p class="authors"><strong>Christian McDowell<sup>∗</sup></strong>, Andrea Panebianco<sup>∗</sup>, Jeremiah Yang<sup>∗</sup>, Sirin Chakraborty, Samuel Chamoun, Travis Ross, and Yin Sun</p>
-              <p class="publication-description">
-                Presents an interactive, live semantic-communication system for pedestrian-safety monitoring at Toomer’s Corner. Visitors can compare methods while varying SNR, codelength, and Age of Information to see how a compact model prioritizes safety-critical information under changing channel conditions.
-              </p>
-              <a class="publication-link" href="https://safestep.eng.auburn.edu/" target="_blank" rel="noopener noreferrer">Explore the live SafeStep@AU demonstration <span aria-hidden="true">↗</span></a>
+              <p class="authors"><strong>Christian McDowell<sup>∗</sup></strong>, Andrea Panebianco<sup>∗</sup>, Jeremiah Yang<sup>∗</sup>, Sirin Chakraborty, S. Chamoun, T. Ross, and Yin Sun</p>
+              <p class="publication-description">A live, browser-based platform for exploring how communication quality and information freshness affect pedestrian-safety inference. I am a co-primary developer of the system, which compares six semantic transceivers using four traffic-camera views.</p>
+              <p class="manuscript-note">Accepted for publication at the Quality, Value, and Age of Information for Tactical Networks Workshop at IEEE MILCOM 2026.</p>
+              <div class="publication-links">
+                <a class="publication-link" href="https://arxiv.org/abs/2608.27688" target="_blank" rel="noopener noreferrer">Read the preprint <span aria-hidden="true">↗</span></a>
+                <a class="publication-link" href="https://safestep.eng.auburn.edu/" target="_blank" rel="noopener noreferrer">Try SafeStep@AU <span aria-hidden="true">↗</span></a>
+              </div>
             </div>
           </article>
 
@@ -1174,18 +1226,45 @@
             </div>
             <div>
               <h3>MAPPO for Edge Server Monitoring</h3>
-              <p class="authors">Samuel Chamoun, <strong>Christian McDowell</strong>, Robin M. Buchanan, Kevin Chan, Eric Graves, and Yin Sun</p>
-              <p class="publication-description">
-                Studies multi-agent proximal policy optimization for distributed monitoring decisions in resource-constrained edge systems.
-              </p>
+              <p class="authors">S. G. Chamoun, <strong>Christian McDowell</strong>, R. M. Buchanan, K. S. Chan, E. Graves, and Y. Sun</p>
+              <p class="publication-description">Uses multi-agent proximal policy optimization with centralized training and decentralized execution for communication-efficient edge-server monitoring. I contributed to simulation development, experimental design, analysis, and manuscript preparation.</p>
+              <a class="publication-link" href="https://doi.org/10.1109/MILCOM64451.2025.11310582" target="_blank" rel="noopener noreferrer">View the published paper <span aria-hidden="true">↗</span></a>
             </div>
           </article>
         </div>
 
-        <p class="equal-note"><sup>∗</sup> Equal contribution. “Co-first author” is used here for equal-contribution authorship.</p>
+        <p class="equal-note"><sup>∗</sup> Equal contribution / co-first authorship.</p>
 
         <div class="patent-strip">
-          <strong>Patent:</strong> Y. Sun, S. Chakraborty, C. McDowell, and A. Panebianco, “Significance-Driven Semantic Communication,” U.S. Provisional Patent Application No. 64/065,591, filed May 14, 2026.
+          <h3>U.S. Provisional Patent Applications</h3>
+          <p>Y. Sun, S. Chakraborty, C. McDowell, and A. Panebianco, “Significance-Driven Semantic Communication,” No. 64/065,591, filed May 14, 2026.</p>
+          <p>Y. Sun, S. Chakraborty, S. G. Chamoun, C. McDowell, A. Panebianco, and T. P. Ross, “Spectrum Efficiency of Semantics and Goal Oriented Communications,” No. 63/875,119, filed September 3, 2025.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="demonstrations">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Research Demonstrations</span>
+            <h2>From Models to Live Systems.</h2>
+          </div>
+          <p class="section-intro">Two platforms make adaptive semantic communication tangible, from browser-based comparisons to an over-the-air implementation. Both are scheduled for live demonstration at the IEEE MILCOM 2026 workshop.</p>
+        </div>
+        <div class="two-column-grid">
+          <article class="project-card">
+            <span class="project-tag">Interactive platform · Co-primary developer</span>
+            <h3>SafeStep@AU</h3>
+            <p>Compare six transceivers using four live traffic-camera views. Adjust SNR, codelength, and Age of Information to explore how communication constraints affect pedestrian-safety monitoring.</p>
+            <a class="publication-link" href="https://safestep.eng.auburn.edu/" target="_blank" rel="noopener noreferrer">Open the live demonstration <span aria-hidden="true">↗</span></a>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Wireless testbed · Primary system developer</span>
+            <h3>MetaVIB-Air</h3>
+            <p>A real-time implementation of Meta-VIB on separate transmitter and receiver NVIDIA Jetson platforms, communicating over an over-the-air wireless link.</p>
+            <a class="publication-link" href="https://youtu.be/AiVjat7U_2I" target="_blank" rel="noopener noreferrer">Watch the demonstration <span aria-hidden="true">↗</span></a>
+          </article>
         </div>
       </div>
     </section>
@@ -1204,7 +1283,7 @@
             <time datetime="2026-01">January 2026 – Present</time>
             <h3>Graduate Research Assistant</h3>
             <p class="organization">Auburn University · Advisor: Dr. Yin Sun</p>
-            <p>Researching significance-driven semantic communication through Meta-VIB transceivers, significance-aware resource allocation, and real-time experimental systems. This work includes the submitted MobiHoc paper, its related provisional patent, and the SafeStep workshop demonstration in preparation.</p>
+            <p>Led the design of Meta-VIB, including its variational encoder–decoder, FiLM-conditioned hypernetwork, ordered-prefix transmission, age-aware inference, and training procedure. My work spans mathematical formulation, physical- and MAC-layer experiments, reproducible software, and the SafeStep and MetaVIB-Air demonstration systems.</p>
           </article>
 
           <article class="timeline-item">
@@ -1218,14 +1297,14 @@
             <time datetime="2024-06">Summer 2024</time>
             <h3>REU Researcher in Bioinformatics</h3>
             <p class="organization">Auburn University · Mentor: Dr. Tin Nguyen</p>
-            <p>Applied large language models and machine learning to cancer-research analysis in an interdisciplinary research environment.</p>
+            <p>Contributed to CancerGPT, investigating large-language-model methods for cancer research and biomedical decision support. Analyzed biomedical literature and datasets with a PhD student mentor in an international research team.</p>
           </article>
 
           <article class="timeline-item">
-            <time datetime="2021">Spring 2021 – Spring 2023</time>
+            <time datetime="2021">2021 – 2023</time>
             <h3>Lead Undergraduate Researcher, Drug Discovery</h3>
             <p class="organization">University of West Georgia</p>
-            <p>Led synthesis-route redesign work that increased yield by 50% and presented the research at multiple academic conferences.</p>
+            <p>Investigated synthetic routes to a pyrimidodiazepine-based antifolate as a potential anticancer compound. Led a synthesis redesign that increased measured product yield by approximately 50%, and presented at University of West Georgia Scholars’ Day and the Georgia Undergraduate Research Conference.</p>
           </article>
         </div>
       </div>
@@ -1244,12 +1323,14 @@
         <div class="education-grid">
           <article class="education-card">
             <h3 class="degree">Ph.D. in Electrical Engineering</h3>
-            <p class="school">Auburn University · Spring 2026 – Present</p>
+            <p class="school">Auburn University · January 2026 – Present</p>
             <dl>
               <dt>Advisor</dt>
               <dd>Dr. Yin Sun</dd>
               <dt>Fellowship</dt>
-              <dd>Walt and Virginia Woltosz Fellow</dd>
+              <dd>Walt and Virginia Woltosz Fellow<br><span class="detail-note">Spring 2026 – Spring 2030</span></dd>
+              <dt>Master’s</dt>
+              <dd>M.S. in Electrical Engineering, en route<br><span class="detail-note">Expected Spring 2027</span></dd>
               <dt>Focus</dt>
               <dd>Semantic communication and edge intelligence</dd>
             </dl>
@@ -1257,12 +1338,12 @@
 
           <article class="education-card">
             <h3 class="degree">B.E. in Computer Engineering</h3>
-            <p class="school">Auburn University · Fall 2025</p>
+            <p class="school">Auburn University · December 2025</p>
             <dl>
               <dt>Honors</dt>
               <dd>Summa Cum Laude</dd>
-              <dt>Focus</dt>
-              <dd>AI/ML, Communications, and Control Systems</dd>
+              <dt>Program</dt>
+              <dd>Accelerated Bachelor’s–Master’s (ABM)</dd>
               <dt>Minor</dt>
               <dd>Mathematics</dd>
               <dt>Major GPA</dt>
@@ -1271,10 +1352,22 @@
           </article>
         </div>
 
+        <p class="additional-study"><strong>Earlier undergraduate study:</strong> Applied Chemistry, University of West Georgia, 2019–2023. Transferred to Auburn University; no degree awarded at UWG.</p>
+
         <div class="coursework">
-          <h3>Graduate coursework</h3>
-          <p>Applied Statistics and Machine Learning · AI and Neuromorphic Hardware · Neural Networks · Information Theory · Theory of Nonlinear Optimization · Robot Control · Stochastic Signal and System Analysis · Real Analysis I · State-Variable Analysis of Systems</p>
+          <h3>Graduate Coursework</h3>
+          <dl class="coursework-list">
+            <dt>Completed</dt>
+            <dd>Neural Networks · Applied Statistics and Machine Learning · AI and Neuromorphic Hardware · Robot Control</dd>
+            <dt>In progress · Fall 2026</dt>
+            <dd>Stochastic Signal and System Analysis · State-Variable Analysis of Systems · Real Analysis I</dd>
+            <dt>Planned · Spring 2027</dt>
+            <dd>Detection and Estimation Theory · Real Analysis II · Linear Optimization</dd>
+            <dt>Audited</dt>
+            <dd>Information Theory · Theory of Nonlinear Optimization</dd>
+          </dl>
         </div>
+        <p class="additional-study"><strong>Additional honors:</strong> Auburn Undergraduate Research Fellowship (Summer–Fall 2025), Auburn Engineering Honors Circle and Dean’s List (Fall 2023–Fall 2025).</p>
       </div>
     </section>
 
@@ -1285,10 +1378,15 @@
             <span class="kicker">Selected engineering</span>
             <h2>Built Beyond The Paper.</h2>
           </div>
-          <p class="section-intro">Hands-on projects across embedded systems, operating systems, and digital hardware complement my research in learning and communication.</p>
+          <p class="section-intro">Hands-on projects in radar classification, embedded systems, operating systems, and digital hardware complement my research in learning and communication.</p>
         </div>
 
         <div class="projects-grid">
+          <article class="project-card">
+            <span class="project-tag">Machine learning · Summer 2025</span>
+            <h3>Radar Target Classification</h3>
+            <p>Developed a synthetic radar-learning pipeline using radar cross section and Doppler features. Trained a CNN–MLP classifier and built reproducible workflows to evaluate how target geometry and motion affect classification.</p>
+          </article>
           <article class="project-card">
             <span class="project-tag">Embedded systems · 2025</span>
             <h3>ASML-Sponsored Dual-Axis Solar Tracker</h3>
@@ -1313,17 +1411,42 @@
           </div>
           <div class="skill-group">
             <h3>Learning</h3>
-            <p>PPO/MAPPO, value-based RL, Variational Information Bottlenecks, PyTorch, TensorFlow</p>
+            <p>PyTorch, TensorFlow, PPO/MAPPO, variational information bottlenecks, hypernetworks, FiLM conditioning</p>
           </div>
           <div class="skill-group">
             <h3>Systems</h3>
-            <p>Linux, ROS, OpenCV, Gymnasium, FPGA development, embedded systems, kernel development</p>
+            <p>NVIDIA Jetson, software-defined radio, embedded Linux, ESP32/ESP-IDF, ROS, FPGA/RTL, Vivado</p>
           </div>
           <div class="skill-group">
             <h3>Methods</h3>
-            <p>Signal processing, optimization, experiment design, data analysis, technical writing</p>
+            <p>Signal processing, optimization, experimental design, OpenCV, NumPy/SciPy, reproducible research</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="service">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="kicker">Leadership &amp; Service</span>
+            <h2>Mentoring Through Engineering.</h2>
+          </div>
+          <p class="section-intro">I help students build and test engineering ideas, from undergraduate capstone research to hands-on STEM activities for children.</p>
+        </div>
+        <div class="two-column-grid">
+          <article class="project-card">
+            <span class="project-tag">Auburn ECE · Fall 2026</span>
+            <h3>Undergraduate Capstone Mentoring</h3>
+            <p>Subject matter expert and technical lead for an undergraduate team developing a robotic intersection safety testbed sponsored by our research lab. I mentor students, coordinate project execution, and guide the integration of sensing, communication, machine learning, and control.</p>
+          </article>
+          <article class="project-card">
+            <span class="project-tag">Church Without Walls · May–July 2022</span>
+            <h3>Youth STEM Program Assistant</h3>
+            <p>Designed and facilitated weekly hands-on STEM activities for children from underserved communities in Carrollton, Georgia, and mentored children to encourage sustained interest in science and engineering.</p>
+          </article>
+        </div>
+        <p class="additional-study"><strong>Professional memberships:</strong> IEEE Graduate Student Member · IEEE Communications Society · IEEE Young Professionals · Auburn ACM Student Chapter.</p>
       </div>
     </section>
 
